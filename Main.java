@@ -28,10 +28,14 @@ class Main {
     }
     System.out.println("The highest pollution level is: " + highest + " at location " + (location + 1));
     System.out.println("\n\n");
+    
     double clusterjuan = 0;
     double clustertew = 0;
-    double[] clusters = new double[2];
-    for(int i = 0; i < pollution.length; i++ ){
+    double clusterthree = 0;
+    double clusterphor = 0;
+    double[] clusters = new double[4];
+    
+    for(int i = 0; i < pollution.length; i++ ){ //finds the average of each cluster
       
       while(i < 5){
         clusterjuan += pollution[i];
@@ -41,10 +45,20 @@ class Main {
         clustertew += pollution[i];
         i++;
       }
-      
-      clusters[0] = clusterjuan;
+      while(i >= 10 && i < 15){
+        clusterthree += pollution[i];
+        i++;
+      }
+      while(i >= 15 && i <= 19){
+        clusterphor += pollution[i];
+        i++;
+      }
+      clusters[0] = clusterjuan; //appends them to a new array
       clusters[1] = clustertew;
+      clusters[2] = clusterthree;
+      clusters[3] = clusterphor;
 
     }
     System.out.println(Arrays.toString(clusters));
+}
 }
